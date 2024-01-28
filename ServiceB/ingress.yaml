@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: service-b-ingress
+spec:
+  rules:
+  - host: bitcoinaks-guy-63f410-mda6v1fm.hcp.eastus.azmk8s.io
+    http:
+      paths:
+      - path: /ServiceB
+        pathType: Prefix
+        backend:
+          service:
+            name: service-b-service
+            port:
+              number: 80
